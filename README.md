@@ -17,13 +17,13 @@ The application provides two endpoints to process credit card debts updates for 
 
 ## API Endpoints
 
-### Blocking I/O
+### Single-threaded
 ```bash
 curl http://localhost:3000/single-threaded
 ```
 This endpoint processes the debt updates sequentially in a single thread.
 
-### Non-blocking I/O with Worker Threads
+### Multi-threaded 
 ```bash
 curl http://localhost:3000/multi-threaded
 ```
@@ -68,4 +68,3 @@ This project serves as a practical example of:
 - Node.js Worker Threads implementation
 - Performance optimization in Node.js
 - Handling CPU-intensive tasks
-- Comparing blocking vs non-blocking operations
