@@ -1,8 +1,8 @@
 const express = require('express');
 const v8 = require('v8');
 const pms_package = require('../package.json');
-const { non_blocking_io_process } = require('./worker-thread/non-blocking-io');
-const { blocking_io_process } = require('./blocking-io');
+const { multi_threaded_process } = require('./worker-thread/multi-threaded.js');
+const { single_threaded_process } = require('./single-threaded');
 
 
 const app = express();
@@ -35,13 +35,13 @@ app.get('/', function (req, res) {
 });
 
 
-app.get('/non-blocking-io', function (req, res) {
-  non_blocking_io_process()
+app.get('/multi-threaded', function (req, res) {
+  multi_threaded_process()
   res.status(200);
 });
 
-app.get('/blocking-io', function (req, res) {
-  blocking_io_process().then(() => {
+app.get('/single-threaded', function (req, res) {
+  single_threaded_process().then(() => {
     res.status(200);
   });
 }

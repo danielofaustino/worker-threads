@@ -31,7 +31,7 @@ async function addPendingDebts(data) {
 
 }
 
-async function blocking_io_process() {
+async function single_threaded_process() {
 
   // import data.json and insert a new field called pending_debts and insert a random number between 1000 and 10000
 
@@ -46,4 +46,4 @@ async function blocking_io_process() {
 
 }
 
-module.exports = { blocking_io_process };
+module.exports = { single_threaded_process };

@@ -24,7 +24,7 @@ function createWorker(data) {
 
 
 
-async function non_blocking_io_process() {
+async function multi_threaded_process() {
 
   console.time('addPendingDebts')
   console.log(data.length);
@@ -48,5 +48,5 @@ async function non_blocking_io_process() {
   fs.writeFileSync(path.join(__dirname + "/../data", 'dataWithPendingDebts.json'), JSON.stringify(dataWithPendingDebts));
 }
 
-module.exports = { non_blocking_io_process };
+module.exports = { multi_threaded_process };
 
